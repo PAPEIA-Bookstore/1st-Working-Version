@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,6 +36,34 @@ namespace login_register
             {
                 this.commentUI(pair[0], pair[1]);
             }
+
+            //code I stol"repurposed" from stachoverflow
+            Bitmap bmp = new Bitmap(1, 1);
+            Bitmap orig = new Bitmap(coverPictureBox.Image);  // shoves the whole image into a 1 pixel bitmap and takes that bitmaps colour
+            using (Graphics g = Graphics.FromImage(bmp))
+            {
+                g.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                g.DrawImage(orig, new Rectangle(0, 0, 1, 1));
+            }
+            Color pixel = bmp.GetPixel(0, 0);
+            // pixel will contain average values for entire orig Bitmap
+            byte avgR = pixel.R;
+            byte avgG = pixel.G;
+            byte avgB = pixel.B;// etc.
+
+            panel2.BackColor = Color.FromArgb(avgR, avgG, avgB);
+            flowLayoutPanel1.BackColor = Color.FromArgb(avgR, avgG, avgB);
+            label2.ForeColor = Color.FromArgb(avgR, avgG, avgB);
+            postReviewButton.BackColor = Color.FromArgb(avgR, avgG, avgB);
+            button1.BackColor = Color.FromArgb(avgR, avgG, avgB);
+            button2.BackColor = Color.FromArgb(avgR, avgG, avgB);
+            button3.BackColor = Color.FromArgb(avgR, avgG, avgB);
+            label3.BackColor = Color.FromArgb(avgR, avgG, avgB);   // for some reason label 3 and timestamp need their back colour not their fore colour changed
+            timestamp_label.BackColor = Color.FromArgb(avgR, avgG, avgB);
+            pictureBox1.BackColor = Color.FromArgb(avgR, avgG, avgB);
+            coverPictureBox.Size = new Size(701, 742);
+            coverPictureBox.BackColor = Color.FromArgb(avgR, avgG, avgB);
+            flowLayoutPanel1.Size = new Size(580, 680);
 
 
         }

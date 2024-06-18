@@ -37,10 +37,10 @@
             label2 = new Label();
             postReviewButton = new Button();
             coverPictureBox = new PictureBox();
-            pictureBox2 = new PictureBox();
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
+            pictureBox2 = new PictureBox();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)coverPictureBox).BeginInit();
@@ -54,7 +54,7 @@
             flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
             flowLayoutPanel1.Location = new Point(696, 37);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(580, 676);
+            flowLayoutPanel1.Size = new Size(580, 680);
             flowLayoutPanel1.TabIndex = 1;
             flowLayoutPanel1.WrapContents = false;
             // 
@@ -153,19 +153,10 @@
             coverPictureBox.Image = Properties.Resources._71wM_BB9mtL__AC_UF1000_1000_QL80_;
             coverPictureBox.Location = new Point(0, -4);
             coverPictureBox.Name = "coverPictureBox";
-            coverPictureBox.Size = new Size(732, 347);
+            coverPictureBox.Size = new Size(701, 742);
             coverPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             coverPictureBox.TabIndex = 38;
             coverPictureBox.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.BackColor = Color.Black;
-            pictureBox2.Location = new Point(660, -4);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(616, 347);
-            pictureBox2.TabIndex = 39;
-            pictureBox2.TabStop = false;
             // 
             // button1
             // 
@@ -209,6 +200,15 @@
             button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
             // 
+            // pictureBox2
+            // 
+            pictureBox2.BackColor = Color.Black;
+            pictureBox2.Location = new Point(660, -4);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(616, 347);
+            pictureBox2.TabIndex = 39;
+            pictureBox2.TabStop = false;
+            // 
             // Forum
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -246,9 +246,9 @@
         private Label timestamp_label;
         private Button postReviewButton;
         private PictureBox coverPictureBox;
-        private PictureBox pictureBox2;
         private Button button1;
         private Button button2;
         private Button button3;
+        private PictureBox pictureBox2;
     }
 }
