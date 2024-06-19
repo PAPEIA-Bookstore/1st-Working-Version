@@ -20,7 +20,6 @@ namespace login_register
         public loginForm()
         {
             InitializeComponent();
-            //this.User = User;
         }
         
         private void loginForm_Load(object sender, EventArgs e)
@@ -39,7 +38,8 @@ namespace login_register
             {
                 NpgsqlConnection connection = DBHandler.OpenConnection();
                 NpgsqlCommand command = DBHandler.GetCommand(connection);
-                command.CommandText = "SELECT * FROM users WHERE (username = '" + textBoxUserName.Text + "');";
+                command.CommandText = "SELECT * FROM users WHERE (username = @username);";
+                command.Parameters.AddWithValue("username", textBoxUserName.Text);
                 NpgsqlDataReader dataReader = command.ExecuteReader();
 
                 if (dataReader.HasRows)
@@ -55,9 +55,6 @@ namespace login_register
                         bool isMatch = BCrypt.Net.BCrypt.EnhancedVerify(pass, dbPass);
                         if (isMatch)
                         {
-
-                            //MessageBox.Show("Welcome " + textBoxUserName.Text + "!", "Login Successfull!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                             User.SetUsername(textBoxUserName.Text);
                             User.SetFullName(dataReader.GetString(1));
                             User.SetProfilePic(dataReader.GetString(4));

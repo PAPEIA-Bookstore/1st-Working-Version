@@ -27,7 +27,8 @@ namespace login_register
                 {
                     NpgsqlConnection connection = DBHandler.OpenConnection();
                     NpgsqlCommand command = DBHandler.GetCommand(connection);
-                    command.CommandText = "SELECT FROM users WHERE (username = '" + textBoxUserName.Text + "')";
+                    command.CommandText = "SELECT FROM users WHERE (username = @username)";
+                    command.Parameters.AddWithValue("username", textBoxUserName.Text);
                     NpgsqlDataReader dataReader = command.ExecuteReader();
 
                     bool usernameExists = dataReader.HasRows;
@@ -52,7 +53,12 @@ namespace login_register
                                 //  Giving the user a random pfp
                                 string prof_pic = GLOBALS.profImages[Random.Shared.Next(0, GLOBALS.profImages.Length)];
                                 //  Inserting to db
-                                command.CommandText = "INSERT INTO users VALUES ('" + username + "','" + fullName + "', '" + hashedPass + "', '" + is_author + "', '" + prof_pic + "')";
+                                command.CommandText = "INSERT INTO users VALUES (@username, @fullname, @password, @is_author, @pfp)";
+                                command.Parameters.AddWithValue ("username", username);
+                                command.Parameters.AddWithValue("fullname", fullName);
+                                command.Parameters.AddWithValue("password", hashedPass);
+                                command.Parameters.AddWithValue("is_author", is_author);
+                                command.Parameters.AddWithValue("pfp", prof_pic);
                                 command.ExecuteNonQuery();
 
                                 textBoxUserName.Clear();

@@ -248,7 +248,6 @@ namespace login_register
             else if (String.IsNullOrWhiteSpace(reviewText.Text))
             {
                 MessageBox.Show("Your review doesn't have any text!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
             }
             else
             {

@@ -236,24 +236,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\chmas\\.nuget\\packages\\": {}
+    "C:\\Users\\theod\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\chmas\\source\\repos\\1st-Working-Version\\form\\login-register\\login-register.csproj",
+      "projectUniqueName": "E:\\Source\\Repos\\login-register\\login-register.csproj",
       "projectName": "login-register",
-      "projectPath": "C:\\Users\\chmas\\source\\repos\\1st-Working-Version\\form\\login-register\\login-register.csproj",
-      "packagesPath": "C:\\Users\\chmas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\chmas\\source\\repos\\1st-Working-Version\\form\\login-register\\obj\\",
+      "projectPath": "E:\\Source\\Repos\\login-register\\login-register.csproj",
+      "packagesPath": "C:\\Users\\theod\\.nuget\\packages\\",
+      "outputPath": "E:\\Source\\Repos\\login-register\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\chmas\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\theod\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0-windows"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -305,7 +307,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
