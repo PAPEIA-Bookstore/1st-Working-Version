@@ -131,17 +131,47 @@ namespace login_register
             DBHandler.CloseConnection(connection, command);
         }
 
+        private void GetBooks(string query, string title)
+        {
+            // MessageBox.Show("The search bar is empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            NpgsqlConnection connection = DBHandler.OpenConnection();
+            NpgsqlCommand command = DBHandler.GetCommand(connection);
+            command.CommandText = query;
+            command.Parameters.AddWithValue("title", "%" + title + "%");    
+            NpgsqlDataReader reader = command.ExecuteReader();
+            if (reader.HasRows)
+            {
+                Books.Clear();
+                while (reader.Read())
+                {
+                    Book book = new Book(reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetFloat(5), reader.GetString(6));
+                    Books.Add(book);
+
+                }
+
+                for (int i = 0; i < Books.Count; i++)
+                {
+                    AddBookToUI(Books[i]);
+                }
+            }
+            else
+            {
+                //No books were found
+            }
+            reader.Close();
+            DBHandler.CloseConnection(connection, command);
+        }
+
         private void SearchLabel_Click(object sender, EventArgs e)
         {
             flowLayoutPanel.Controls.Clear();
             if (String.IsNullOrWhiteSpace(searchBar.Text))
             {
-                // MessageBox.Show("The search bar is empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.GetBooks("SELECT * FROM books;");
             }
             else
             {
-                this.GetBooks("SELECT * FROM books WHERE title like '%" + searchBar.Text + "%';");
+                this.GetBooks("SELECT * FROM books WHERE title like @title;", searchBar.Text);
             }
         }
 
@@ -154,7 +184,7 @@ namespace login_register
         {
             if (Books.Count == 0)
             {
-                MessageBox.Show("The search bar is empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No books to display", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             flowLayoutPanel.Controls.Clear();
 
