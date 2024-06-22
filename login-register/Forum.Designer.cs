@@ -92,9 +92,10 @@
             new_comment.ForeColor = Color.FromArgb(73, 60, 52);
             new_comment.Location = new Point(9, 49);
             new_comment.Name = "new_comment";
-            new_comment.Size = new Size(451, 108);
+            new_comment.Size = new Size(451, 114);
             new_comment.TabIndex = 34;
             new_comment.Text = "";
+            new_comment.TextChanged += new_comment_TextChanged;
             // 
             // pictureBox1
             // 
@@ -126,11 +127,11 @@
             label2.Cursor = Cursors.Hand;
             label2.Font = new Font("Candara", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(73, 60, 52);
-            label2.Location = new Point(12, 359);
+            label2.Location = new Point(12, 360);
             label2.Name = "label2";
-            label2.Size = new Size(165, 26);
+            label2.Size = new Size(148, 26);
             label2.TabIndex = 36;
-            label2.Text = "Make a Question";
+            label2.Text = "Ask a Question";
             // 
             // postReviewButton
             // 

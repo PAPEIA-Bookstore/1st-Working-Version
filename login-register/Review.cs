@@ -28,12 +28,13 @@ namespace login_register
             this.time = time;
         }
 
-        public static List<Review> GetReviews(string query)
+        public static List<Review> GetReviews(string query, string isbn)
         {
             List<Review> Reviews = new List<Review>();
             NpgsqlConnection connection = DBHandler.OpenConnection();
             NpgsqlCommand command = DBHandler.GetCommand(connection);
             command.CommandText = query;
+            command.Parameters.AddWithValue("isbn", isbn);
             NpgsqlDataReader reader = command.ExecuteReader();
             if (reader.HasRows)
             {              

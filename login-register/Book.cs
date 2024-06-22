@@ -32,10 +32,17 @@ namespace login_register
         }
         public void InsertBook_toDB()
         {
-            string price1 = this.price.ToString(CultureInfo.InvariantCulture);
+            // string price1 = this.price.ToString(CultureInfo.InvariantCulture);
             NpgsqlConnection connection = DBHandler.OpenConnection();
             NpgsqlCommand command = DBHandler.GetCommand(connection);
-            command.CommandText = "INSERT INTO books VALUES ('"+this.isbn+"','"+this.title+"','"+this.author+"','"+this.plot+"','"+this.category+"',"+price1+",'"+this.cover+"');";
+            command.CommandText = "INSERT INTO books VALUES (@isbn,@title,@author,@plot,@category,@price,@cover);";
+            command.Parameters.AddWithValue("isbn", this.isbn);
+            command.Parameters.AddWithValue("title", this.title);
+            command.Parameters.AddWithValue("author", this.author);
+            command.Parameters.AddWithValue("plot", this.plot);
+            command.Parameters.AddWithValue("category",this.category);
+            command.Parameters.AddWithValue("price", this.price);
+            command.Parameters.AddWithValue("cover", this.cover);
             command.ExecuteNonQuery();
             DBHandler.CloseConnection(connection, command);
         }

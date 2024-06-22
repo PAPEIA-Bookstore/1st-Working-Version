@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -16,6 +17,7 @@ namespace login_register
 {
     public partial class AuthorPage : Form
     {
+        List<Control> fields;
 
         public AuthorPage()
         {
@@ -24,7 +26,7 @@ namespace login_register
             authorNameLabel.Text = User.GetFullName();
             authorUsernameLabel.Text = "@" + User.GetUsername();
 
-
+            fields = new List<Control>() {cover_textBox, isbn_textBox, price_textBox, title_textBox, plot_richTextBox, comboBox1};
 
             List<List<string>> Books = new List<List<string>>();
             List<String> B = new List<string>();
@@ -33,7 +35,8 @@ namespace login_register
             // MessageBox.Show("The search bar is empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             NpgsqlConnection connection = DBHandler.OpenConnection();
             NpgsqlCommand command = DBHandler.GetCommand(connection);
-            command.CommandText = "SELECT * FROM books WHERE author like \'" + User.GetFullName() + "\';" ;
+            command.CommandText = "SELECT * FROM books WHERE author like @author;";
+            command.Parameters.AddWithValue("author", User.GetFullName());
             NpgsqlDataReader reader = command.ExecuteReader();
             if (reader.HasRows)
             {
@@ -49,7 +52,8 @@ namespace login_register
                 foreach (String y in B)
                 {
                     reader.Close();
-                    command.CommandText = "select * from book_statistics WHERE isbn like \'" + y + "\';";
+                    command.CommandText = "select * from book_statistics WHERE isbn like @isbn;";
+                    command.Parameters.AddWithValue("isbn",y);
                     NpgsqlDataReader reader2 = command.ExecuteReader();
                     if (reader2.HasRows)
                     {
@@ -57,7 +61,7 @@ namespace login_register
                         {
                             String f = n.First() ;
                             //String x = (reader.GetString(0), reader.GetString(1), reader.GetString(2));
-                            label6.Text = label6.Text + "Title : " + f +" rating : " + reader.GetInt16(1).ToString() + " sales : " + reader.GetInt32(2).ToString() + System.Environment.NewLine;
+                            label6.Text = label6.Text + "Title: " + f + " rating: " + reader.GetInt16(1).ToString() + " sales: " + reader.GetInt32(2).ToString() + System.Environment.NewLine;
                             //label6.Text = label6.Text + "Title : " + reader.GetString(0) + " rating : " + reader.GetString(1) + " sales : " + reader.GetString(2);
                             n.RemoveAt(0);
                         }
@@ -82,11 +86,11 @@ namespace login_register
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void AddBookButton_Click(object sender, EventArgs e)
         {
-            if (isbn_textBox.TextLength < 1 || title_textBox.TextLength < 1 || plot_richTextBox.TextLength < 1 || price_textBox.TextLength < 1 || cover_textBox.TextLength < 1)
+            if (fields.Any(fields => String.IsNullOrWhiteSpace(fields.Text)))
             {
-                MessageBox.Show("Please complete all required fields!", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please complete all required fields!", "Publication Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -100,6 +104,15 @@ namespace login_register
 
                 Book book = new Book(isbn, title, author, plot, comboBox1.Text, price, cover);
                 book.InsertBook_toDB();
+                MessageBox.Show("You have successfully published a book!", "Book Published", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                cover_textBox.Clear();
+                isbn_textBox.Clear();
+                price_textBox.Clear();
+                title_textBox.Clear();
+                plot_richTextBox.Clear();
+                comboBox1.Text = String.Empty;
+
             }
 
 

@@ -34,7 +34,7 @@ namespace login_register
             buyButton.Text = "Buy: " + book.price.ToString() + "€";
 
             //Reviews
-            List<Review> reviews = Review.GetReviews("SELECT * FROM reviews WHERE isbn='"+book.isbn+"';");
+            List<Review> reviews = Review.GetReviews("SELECT * FROM reviews WHERE isbn=@isbn;", book.isbn);
             for (int i = 0; i < reviews.Count; i++)
             {
                 AddReviewToUI(reviews[i]);
@@ -274,7 +274,7 @@ namespace login_register
                     }
                 }
                 MessageBox.Show("You review has been posted!", "Thank you", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                List<Review> reviews = Review.GetReviews("SELECT * FROM reviews WHERE isbn='" + book.isbn + "';");
+                List<Review> reviews = Review.GetReviews("SELECT * FROM reviews WHERE isbn=@isbn;", book.isbn);
                 reviewsFlowLayoutPanel.Controls.Clear();
                 for (int i = 0; i < reviews.Count; i++)
                 {

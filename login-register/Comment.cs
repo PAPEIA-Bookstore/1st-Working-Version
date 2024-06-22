@@ -78,9 +78,10 @@ namespace login_register
         {
             List < Comment[] > pairs = new List<Comment[]>();
             //παίρνει το καρτεσιανό γινόμενο από το σχόλιο και την απάντηση ,όταν υπάρχει απάντηση
-            string query = "select * from comments as comm left outer join comments as ans on comm.id = ans.parent where ans.id is not null and comm.isbn='"+book.isbn+ "' and comm.is_reply = false";
+            string query = "select * from comments as comm left outer join comments as ans on comm.id = ans.parent where ans.id is not null and comm.isbn=@isbn and comm.is_reply = false";
             using NpgsqlConnection connection = DBHandler.OpenConnection();
             using NpgsqlCommand cmd = new NpgsqlCommand(query, connection);
+            cmd.Parameters.AddWithValue("isbn", book.isbn);
             using NpgsqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
@@ -97,9 +98,10 @@ namespace login_register
         {
             List<Comment> comments = new List<Comment>();
 
-            string query = "select * from comments as comm left outer join comments as ans on comm.id = ans.parent where ans.id is null and comm.isbn='"+book.isbn+ "' and comm.is_reply = false";
+            string query = "select * from comments as comm left outer join comments as ans on comm.id = ans.parent where ans.id is null and comm.isbn=@isbn and comm.is_reply = false";
             using NpgsqlConnection connection = DBHandler.OpenConnection();
             using NpgsqlCommand cmd = new NpgsqlCommand(query, connection);
+            cmd.Parameters.AddWithValue("isbn", book.isbn);
             using NpgsqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {

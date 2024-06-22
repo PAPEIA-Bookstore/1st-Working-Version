@@ -37,7 +37,7 @@
             pictureBox1 = new PictureBox();
             panel1 = new Panel();
             label4 = new Label();
-            button1 = new Button();
+            AddBookButton = new Button();
             plot_richTextBox = new RichTextBox();
             label1 = new Label();
             label3 = new Label();
@@ -146,7 +146,7 @@
             // 
             panel1.BackColor = Color.FromArgb(73, 60, 52);
             panel1.Controls.Add(label4);
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(AddBookButton);
             panel1.Controls.Add(plot_richTextBox);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(label3);
@@ -168,19 +168,19 @@
             label4.TabIndex = 19;
             label4.Text = "Plot :";
             // 
-            // button1
+            // AddBookButton
             // 
-            button1.BackColor = Color.FromArgb(73, 60, 52);
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Candara", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.FromArgb(186, 252, 203);
-            button1.Location = new Point(270, 397);
-            button1.Name = "button1";
-            button1.Size = new Size(205, 56);
-            button1.TabIndex = 18;
-            button1.Text = "ADD BOOK";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            AddBookButton.BackColor = Color.FromArgb(73, 60, 52);
+            AddBookButton.FlatStyle = FlatStyle.Flat;
+            AddBookButton.Font = new Font("Candara", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            AddBookButton.ForeColor = Color.FromArgb(186, 252, 203);
+            AddBookButton.Location = new Point(270, 397);
+            AddBookButton.Name = "AddBookButton";
+            AddBookButton.Size = new Size(205, 56);
+            AddBookButton.TabIndex = 18;
+            AddBookButton.Text = "ADD BOOK";
+            AddBookButton.UseVisualStyleBackColor = false;
+            AddBookButton.Click += AddBookButton_Click;
             // 
             // plot_richTextBox
             // 
@@ -200,9 +200,9 @@
             label1.ForeColor = Color.PapayaWhip;
             label1.Location = new Point(216, 7);
             label1.Name = "label1";
-            label1.Size = new Size(318, 36);
+            label1.Size = new Size(322, 36);
             label1.TabIndex = 8;
-            label1.Text = "Add a Book in the Library";
+            label1.Text = "Add a Book to the Library";
             // 
             // label3
             // 
@@ -311,7 +311,6 @@
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(214, 31);
             comboBox1.TabIndex = 16;
-            comboBox1.Text = "Mystery";
             // 
             // price_label
             // 
@@ -413,7 +412,7 @@
         private Label authorNameLabel;
         private PictureBox pictureBox1;
         private Panel panel1;
-        private Button button1;
+        private Button AddBookButton;
         private RichTextBox plot_richTextBox;
         private Label label1;
         private Label label3;

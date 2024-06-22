@@ -44,10 +44,13 @@ namespace login_register
             else
             {
                 DateTime time = DateTime.Now;
-                string price = book.price.ToString(CultureInfo.InvariantCulture);
                 NpgsqlConnection connection = DBHandler.OpenConnection();
                 NpgsqlCommand command = DBHandler.GetCommand(connection);
-                command.CommandText = "INSERT INTO transactions(username,time,price,isbn) VALUES('" + User.GetUsername() + "','" + time.ToString() + "'," + price + ",'" + book.isbn + "');";
+                command.CommandText = "INSERT INTO transactions(username,time,price,isbn) VALUES(@username,@time,@price,@isbn);";
+                command.Parameters.AddWithValue("username", User.GetUsername());
+                command.Parameters.AddWithValue("time", time);
+                command.Parameters.AddWithValue("price", book.price);
+                command.Parameters.AddWithValue("isbn", book.isbn);
                 command.ExecuteNonQuery();
                 MessageBox.Show("Transaction Successful!", "Thank you for choosing us", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 DBHandler.CloseConnection(connection, command);

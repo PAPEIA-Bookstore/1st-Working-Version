@@ -265,7 +265,7 @@ namespace login_register
             if (panel.Size == new Size(484, 417))
             {
                 panel.Size = new Size(484, 209); //ερώτηση χωρίς απάντηση
-                
+
             }
             else
             {
@@ -334,6 +334,11 @@ namespace login_register
             {
                 this.commentUI(pair[0], pair[1]);
             }
+        }
+
+        private void new_comment_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
