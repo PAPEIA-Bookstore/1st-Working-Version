@@ -30,7 +30,7 @@
         {
             profCover = new PictureBox();
             scroll_panel2 = new Panel();
-            label6 = new Label();
+            statisticsContainer = new RichTextBox();
             label5 = new Label();
             pictureBox2 = new PictureBox();
             authorNameLabel = new Label();
@@ -67,8 +67,9 @@
             profCover.Dock = DockStyle.Top;
             profCover.Image = Properties.Resources.profCover;
             profCover.Location = new Point(0, 0);
+            profCover.Margin = new Padding(3, 4, 3, 4);
             profCover.Name = "profCover";
-            profCover.Size = new Size(1273, 116);
+            profCover.Size = new Size(1455, 147);
             profCover.SizeMode = PictureBoxSizeMode.StretchImage;
             profCover.TabIndex = 6;
             profCover.TabStop = false;
@@ -76,7 +77,7 @@
             // scroll_panel2
             // 
             scroll_panel2.AutoScroll = true;
-            scroll_panel2.Controls.Add(label6);
+            scroll_panel2.Controls.Add(statisticsContainer);
             scroll_panel2.Controls.Add(label5);
             scroll_panel2.Controls.Add(pictureBox2);
             scroll_panel2.Controls.Add(authorNameLabel);
@@ -85,21 +86,25 @@
             scroll_panel2.Controls.Add(label2);
             scroll_panel2.Controls.Add(authorUsernameLabel);
             scroll_panel2.Dock = DockStyle.Bottom;
-            scroll_panel2.Location = new Point(0, 114);
+            scroll_panel2.ForeColor = Color.PapayaWhip;
+            scroll_panel2.Location = new Point(0, 144);
+            scroll_panel2.Margin = new Padding(3, 4, 3, 4);
             scroll_panel2.Name = "scroll_panel2";
-            scroll_panel2.Size = new Size(1273, 602);
+            scroll_panel2.Size = new Size(1455, 763);
             scroll_panel2.TabIndex = 14;
             // 
-            // label6
+            // statisticsContainer
             // 
-            label6.AutoSize = true;
-            label6.BackColor = Color.FromArgb(73, 60, 52);
-            label6.Font = new Font("Candara", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.PapayaWhip;
-            label6.Location = new Point(12, 574);
-            label6.Name = "label6";
-            label6.Size = new Size(0, 36);
-            label6.TabIndex = 21;
+            statisticsContainer.BackColor = Color.FromArgb(73, 60, 52);
+            statisticsContainer.BorderStyle = BorderStyle.None;
+            statisticsContainer.Font = new Font("Candara", 16.2782612F, FontStyle.Regular, GraphicsUnit.Point, 161);
+            statisticsContainer.ForeColor = Color.PapayaWhip;
+            statisticsContainer.Location = new Point(30, 710);
+            statisticsContainer.Name = "statisticsContainer";
+            statisticsContainer.Size = new Size(519, 350);
+            statisticsContainer.TabIndex = 21;
+            statisticsContainer.Text = "";
+            statisticsContainer.TextChanged += statisticsContainer_TextChanged;
             // 
             // label5
             // 
@@ -107,18 +112,19 @@
             label5.BackColor = Color.FromArgb(73, 60, 52);
             label5.Font = new Font("Candara", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.PapayaWhip;
-            label5.Location = new Point(12, 525);
+            label5.Location = new Point(14, 665);
             label5.Name = "label5";
-            label5.Size = new Size(153, 36);
+            label5.Size = new Size(188, 42);
             label5.TabIndex = 20;
             label5.Text = "Your Books";
             // 
             // pictureBox2
             // 
             pictureBox2.BackColor = Color.FromArgb(73, 60, 52);
-            pictureBox2.Location = new Point(3, 509);
+            pictureBox2.Location = new Point(0, 645);
+            pictureBox2.Margin = new Padding(3, 4, 3, 4);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(1250, 341);
+            pictureBox2.Size = new Size(1455, 432);
             pictureBox2.TabIndex = 12;
             pictureBox2.TabStop = false;
             // 
@@ -127,17 +133,18 @@
             authorNameLabel.AutoSize = true;
             authorNameLabel.Font = new Font("Candara", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             authorNameLabel.ForeColor = Color.PapayaWhip;
-            authorNameLabel.Location = new Point(138, 27);
+            authorNameLabel.Location = new Point(158, 34);
             authorNameLabel.Name = "authorNameLabel";
-            authorNameLabel.Size = new Size(138, 36);
+            authorNameLabel.Size = new Size(166, 42);
             authorNameLabel.TabIndex = 2;
             authorNameLabel.Text = "Full Name";
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(11, 27);
+            pictureBox1.Location = new Point(13, 34);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(100, 100);
+            pictureBox1.Size = new Size(114, 127);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
@@ -151,9 +158,10 @@
             panel1.Controls.Add(label1);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(tableLayoutPanel1);
-            panel1.Location = new Point(470, 7);
+            panel1.Location = new Point(537, 9);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(762, 481);
+            panel1.Size = new Size(871, 609);
             panel1.TabIndex = 11;
             // 
             // label4
@@ -162,9 +170,9 @@
             label4.AutoSize = true;
             label4.Font = new Font("Candara", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.PapayaWhip;
-            label4.Location = new Point(46, 288);
+            label4.Location = new Point(53, 365);
             label4.Name = "label4";
-            label4.Size = new Size(52, 23);
+            label4.Size = new Size(62, 28);
             label4.TabIndex = 19;
             label4.Text = "Plot :";
             // 
@@ -174,9 +182,10 @@
             AddBookButton.FlatStyle = FlatStyle.Flat;
             AddBookButton.Font = new Font("Candara", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             AddBookButton.ForeColor = Color.FromArgb(186, 252, 203);
-            AddBookButton.Location = new Point(270, 397);
+            AddBookButton.Location = new Point(309, 503);
+            AddBookButton.Margin = new Padding(3, 4, 3, 4);
             AddBookButton.Name = "AddBookButton";
-            AddBookButton.Size = new Size(205, 56);
+            AddBookButton.Size = new Size(234, 71);
             AddBookButton.TabIndex = 18;
             AddBookButton.Text = "ADD BOOK";
             AddBookButton.UseVisualStyleBackColor = false;
@@ -187,9 +196,10 @@
             plot_richTextBox.BackColor = Color.PapayaWhip;
             plot_richTextBox.BorderStyle = BorderStyle.None;
             plot_richTextBox.Font = new Font("Candara", 12F);
-            plot_richTextBox.Location = new Point(144, 226);
+            plot_richTextBox.Location = new Point(165, 286);
+            plot_richTextBox.Margin = new Padding(3, 4, 3, 4);
             plot_richTextBox.Name = "plot_richTextBox";
-            plot_richTextBox.Size = new Size(524, 152);
+            plot_richTextBox.Size = new Size(599, 193);
             plot_richTextBox.TabIndex = 17;
             plot_richTextBox.Text = "";
             // 
@@ -198,9 +208,9 @@
             label1.AutoSize = true;
             label1.Font = new Font("Candara", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.PapayaWhip;
-            label1.Location = new Point(216, 7);
+            label1.Location = new Point(247, 9);
             label1.Name = "label1";
-            label1.Size = new Size(322, 36);
+            label1.Size = new Size(397, 42);
             label1.TabIndex = 8;
             label1.Text = "Add a Book to the Library";
             // 
@@ -210,9 +220,9 @@
             label3.AutoSize = true;
             label3.Font = new Font("Candara", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.PapayaWhip;
-            label3.Location = new Point(46, 698);
+            label3.Location = new Point(53, 884);
             label3.Name = "label3";
-            label3.Size = new Size(52, 23);
+            label3.Size = new Size(62, 28);
             label3.TabIndex = 16;
             label3.Text = "Plot :";
             // 
@@ -234,13 +244,14 @@
             tableLayoutPanel1.Controls.Add(price_textBox, 3, 0);
             tableLayoutPanel1.Controls.Add(cover_label, 2, 1);
             tableLayoutPanel1.Controls.Add(cover_textBox, 3, 1);
-            tableLayoutPanel1.Location = new Point(43, 56);
+            tableLayoutPanel1.Location = new Point(49, 71);
+            tableLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 3;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel1.Size = new Size(642, 154);
+            tableLayoutPanel1.Size = new Size(734, 195);
             tableLayoutPanel1.TabIndex = 9;
             // 
             // title_label
@@ -249,9 +260,9 @@
             title_label.AutoSize = true;
             title_label.Font = new Font("Candara", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             title_label.ForeColor = Color.PapayaWhip;
-            title_label.Location = new Point(3, 14);
+            title_label.Location = new Point(3, 18);
             title_label.Name = "title_label";
-            title_label.Size = new Size(54, 23);
+            title_label.Size = new Size(65, 28);
             title_label.TabIndex = 7;
             title_label.Text = "Title :";
             // 
@@ -260,9 +271,10 @@
             title_textBox.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             title_textBox.BackColor = Color.PapayaWhip;
             title_textBox.Font = new Font("Candara", 12F);
-            title_textBox.Location = new Point(103, 12);
+            title_textBox.Location = new Point(118, 16);
+            title_textBox.Margin = new Padding(3, 4, 3, 4);
             title_textBox.Name = "title_textBox";
-            title_textBox.Size = new Size(214, 27);
+            title_textBox.Size = new Size(245, 31);
             title_textBox.TabIndex = 1;
             // 
             // isbn_label
@@ -271,9 +283,9 @@
             isbn_label.AutoSize = true;
             isbn_label.Font = new Font("Candara", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             isbn_label.ForeColor = Color.PapayaWhip;
-            isbn_label.Location = new Point(3, 65);
+            isbn_label.Location = new Point(3, 82);
             isbn_label.Name = "isbn_label";
-            isbn_label.Size = new Size(58, 23);
+            isbn_label.Size = new Size(70, 28);
             isbn_label.TabIndex = 15;
             isbn_label.Text = "ISBN :";
             // 
@@ -282,9 +294,10 @@
             isbn_textBox.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             isbn_textBox.BackColor = Color.PapayaWhip;
             isbn_textBox.Font = new Font("Candara", 12F);
-            isbn_textBox.Location = new Point(103, 63);
+            isbn_textBox.Location = new Point(118, 80);
+            isbn_textBox.Margin = new Padding(3, 4, 3, 4);
             isbn_textBox.Name = "isbn_textBox";
-            isbn_textBox.Size = new Size(214, 27);
+            isbn_textBox.Size = new Size(245, 31);
             isbn_textBox.TabIndex = 14;
             // 
             // category_label
@@ -293,9 +306,9 @@
             category_label.AutoSize = true;
             category_label.Font = new Font("Candara", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             category_label.ForeColor = Color.PapayaWhip;
-            category_label.Location = new Point(3, 116);
+            category_label.Location = new Point(3, 133);
             category_label.Name = "category_label";
-            category_label.Size = new Size(92, 23);
+            category_label.Size = new Size(105, 56);
             category_label.TabIndex = 9;
             category_label.Text = "Category :";
             // 
@@ -307,9 +320,10 @@
             comboBox1.Font = new Font("Candara", 14.25F);
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Horror", "Science Fiction", "Romance", "Mystery" });
-            comboBox1.Location = new Point(103, 112);
+            comboBox1.Location = new Point(118, 143);
+            comboBox1.Margin = new Padding(3, 4, 3, 4);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(214, 31);
+            comboBox1.Size = new Size(244, 36);
             comboBox1.TabIndex = 16;
             // 
             // price_label
@@ -318,9 +332,9 @@
             price_label.AutoSize = true;
             price_label.Font = new Font("Candara", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             price_label.ForeColor = Color.PapayaWhip;
-            price_label.Location = new Point(323, 14);
+            price_label.Location = new Point(369, 18);
             price_label.Name = "price_label";
-            price_label.Size = new Size(60, 23);
+            price_label.Size = new Size(71, 28);
             price_label.TabIndex = 13;
             price_label.Text = "Price :";
             // 
@@ -329,9 +343,10 @@
             price_textBox.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             price_textBox.BackColor = Color.PapayaWhip;
             price_textBox.Font = new Font("Candara", 12F);
-            price_textBox.Location = new Point(423, 12);
+            price_textBox.Location = new Point(484, 16);
+            price_textBox.Margin = new Padding(3, 4, 3, 4);
             price_textBox.Name = "price_textBox";
-            price_textBox.Size = new Size(216, 27);
+            price_textBox.Size = new Size(247, 31);
             price_textBox.TabIndex = 12;
             // 
             // cover_label
@@ -340,9 +355,9 @@
             cover_label.AutoSize = true;
             cover_label.Font = new Font("Candara", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cover_label.ForeColor = Color.PapayaWhip;
-            cover_label.Location = new Point(323, 65);
+            cover_label.Location = new Point(369, 82);
             cover_label.Name = "cover_label";
-            cover_label.Size = new Size(66, 23);
+            cover_label.Size = new Size(80, 28);
             cover_label.TabIndex = 11;
             cover_label.Text = "Cover :";
             // 
@@ -351,9 +366,10 @@
             cover_textBox.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             cover_textBox.BackColor = Color.PapayaWhip;
             cover_textBox.Font = new Font("Candara", 12F);
-            cover_textBox.Location = new Point(423, 63);
+            cover_textBox.Location = new Point(484, 80);
+            cover_textBox.Margin = new Padding(3, 4, 3, 4);
             cover_textBox.Name = "cover_textBox";
-            cover_textBox.Size = new Size(216, 27);
+            cover_textBox.Size = new Size(247, 31);
             cover_textBox.TabIndex = 10;
             // 
             // label2
@@ -362,9 +378,9 @@
             label2.BackColor = Color.PapayaWhip;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(73, 60, 52);
-            label2.Location = new Point(138, 106);
+            label2.Location = new Point(158, 134);
             label2.Name = "label2";
-            label2.Size = new Size(84, 21);
+            label2.Size = new Size(105, 28);
             label2.TabIndex = 4;
             label2.Text = "Author ✔";
             // 
@@ -373,22 +389,23 @@
             authorUsernameLabel.AutoSize = true;
             authorUsernameLabel.Font = new Font("Candara", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             authorUsernameLabel.ForeColor = Color.PapayaWhip;
-            authorUsernameLabel.Location = new Point(138, 63);
+            authorUsernameLabel.Location = new Point(158, 80);
             authorUsernameLabel.Name = "authorUsernameLabel";
-            authorUsernameLabel.Size = new Size(109, 23);
+            authorUsernameLabel.Size = new Size(131, 28);
             authorUsernameLabel.TabIndex = 6;
             authorUsernameLabel.Text = "@username";
             // 
             // AuthorPage
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             BackColor = Color.Tan;
-            ClientSize = new Size(1273, 716);
+            ClientSize = new Size(1455, 907);
             Controls.Add(scroll_panel2);
             Controls.Add(profCover);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "AuthorPage";
             Text = "AuthorPage";
             TopMost = true;
@@ -430,7 +447,7 @@
         private Label authorUsernameLabel;
         private Label label4;
         private ComboBox comboBox1;
-        private Label label6;
         private Label label5;
+        private RichTextBox statisticsContainer;
     }
 }

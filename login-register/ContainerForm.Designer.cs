@@ -47,9 +47,9 @@
             usernameLabel.Cursor = Cursors.Hand;
             usernameLabel.Font = new Font("Candara", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             usernameLabel.ForeColor = Color.PapayaWhip;
-            usernameLabel.Location = new Point(58, 30);
+            usernameLabel.Location = new Point(91, 36);
             usernameLabel.Name = "usernameLabel";
-            usernameLabel.Size = new Size(65, 26);
+            usernameLabel.Size = new Size(78, 32);
             usernameLabel.TabIndex = 3;
             usernameLabel.Text = "label2";
             usernameLabel.Click += usernameLabel_Click;
@@ -57,9 +57,10 @@
             // pfpBox
             // 
             pfpBox.BackColor = Color.FromArgb(73, 60, 52);
-            pfpBox.Location = new Point(12, 21);
+            pfpBox.Location = new Point(39, 27);
+            pfpBox.Margin = new Padding(3, 4, 3, 4);
             pfpBox.Name = "pfpBox";
-            pfpBox.Size = new Size(40, 40);
+            pfpBox.Size = new Size(46, 51);
             pfpBox.SizeMode = PictureBoxSizeMode.StretchImage;
             pfpBox.TabIndex = 26;
             pfpBox.TabStop = false;
@@ -72,9 +73,10 @@
             exitButton.FlatStyle = FlatStyle.Flat;
             exitButton.Font = new Font("Consolas", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             exitButton.ForeColor = Color.PapayaWhip;
-            exitButton.Location = new Point(1209, 21);
+            exitButton.Location = new Point(1382, 27);
+            exitButton.Margin = new Padding(3, 4, 3, 4);
             exitButton.Name = "exitButton";
-            exitButton.Size = new Size(35, 35);
+            exitButton.Size = new Size(40, 44);
             exitButton.TabIndex = 27;
             exitButton.Text = "X";
             exitButton.UseVisualStyleBackColor = false;
@@ -84,9 +86,10 @@
             // 
             panel1.AutoScroll = true;
             panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new Point(0, 82);
+            panel1.Location = new Point(0, 104);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1273, 716);
+            panel1.Size = new Size(1455, 907);
             panel1.TabIndex = 29;
             // 
             // panel2
@@ -99,8 +102,9 @@
             panel2.Controls.Add(usernameLabel);
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
+            panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1273, 82);
+            panel2.Size = new Size(1455, 104);
             panel2.TabIndex = 30;
             // 
             // bookLand
@@ -108,9 +112,10 @@
             bookLand.BackColor = Color.FromArgb(73, 60, 52);
             bookLand.Cursor = Cursors.Hand;
             bookLand.Image = Properties.Resources.text_1717247010360;
-            bookLand.Location = new Point(469, 21);
+            bookLand.Location = new Point(536, 27);
+            bookLand.Margin = new Padding(3, 4, 3, 4);
             bookLand.Name = "bookLand";
-            bookLand.Size = new Size(329, 50);
+            bookLand.Size = new Size(376, 63);
             bookLand.SizeMode = PictureBoxSizeMode.StretchImage;
             bookLand.TabIndex = 30;
             bookLand.TabStop = false;
@@ -122,23 +127,22 @@
             loginOrRegister.Cursor = Cursors.Hand;
             loginOrRegister.Font = new Font("Candara", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             loginOrRegister.ForeColor = Color.PapayaWhip;
-            loginOrRegister.Location = new Point(1077, 30);
+            loginOrRegister.Location = new Point(1231, 38);
             loginOrRegister.Name = "loginOrRegister";
-            loginOrRegister.Size = new Size(107, 26);
+            loginOrRegister.Size = new Size(130, 32);
             loginOrRegister.TabIndex = 29;
             loginOrRegister.Text = "Logout 🔘";
             loginOrRegister.Click += loginOrRegister_Click;
             // 
             // ContainerForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.PapayaWhip;
-            ClientSize = new Size(1273, 798);
+            ClientSize = new Size(1455, 1011);
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 2, 3, 2);
             Name = "ContainerForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "MyProfile";
