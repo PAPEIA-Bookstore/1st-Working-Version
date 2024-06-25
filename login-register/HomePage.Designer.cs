@@ -190,7 +190,7 @@
             // searchBar
             // 
             searchBar.Font = new Font("Candara", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            searchBar.Location = new Point(533, 17);
+            searchBar.Location = new Point(596, 17);
             searchBar.Name = "searchBar";
             searchBar.Size = new Size(242, 35);
             searchBar.TabIndex = 39;
@@ -201,7 +201,7 @@
             SearchLabel.Cursor = Cursors.Hand;
             SearchLabel.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             SearchLabel.ForeColor = Color.FromArgb(73, 60, 52);
-            SearchLabel.Location = new Point(781, 18);
+            SearchLabel.Location = new Point(844, 17);
             SearchLabel.Name = "SearchLabel";
             SearchLabel.Size = new Size(51, 36);
             SearchLabel.TabIndex = 40;
