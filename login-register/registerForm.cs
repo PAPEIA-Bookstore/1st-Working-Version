@@ -68,18 +68,15 @@ namespace login_register
 
                                 MessageBox.Show("Your account has been successfully created!", "Registration Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                
-                               // DBHandler.CloseConnection(connection, command);
-
                                 User.SetUsername(username);
                                 User.SetFullName(fullName);
                                 User.SetProfilePic(prof_pic);
                                 User.SetAuthor(is_author);
 
-                                // ContainerForm containerForm = new ContainerForm(User);
-                                //containerForm.Show();
-                               // loginForm loginform = new loginForm();
+                                
+                                //loginForm loginform = new loginForm();
                                 //loginform.Show();
-                                //this.Close();
+                                
                             }
                             else
                             {

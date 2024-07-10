@@ -246,7 +246,7 @@
       "projectName": "login-register",
       "projectPath": "C:\\Users\\mtimo\\source\\repos\\1st-Working-Version\\login-register\\login-register.csproj",
       "packagesPath": "C:\\Users\\mtimo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mtimo\\Source\\Repos\\1st-Working-Version\\login-register\\obj\\",
+      "outputPath": "C:\\Users\\mtimo\\source\\repos\\1st-Working-Version\\login-register\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

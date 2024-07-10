@@ -53,9 +53,9 @@
             label1.ForeColor = Color.FromArgb(73, 60, 52);
             label1.Location = new Point(44, 42);
             label1.Name = "label1";
-            label1.Size = new Size(234, 33);
+            label1.Size = new Size(151, 40);
             label1.TabIndex = 0;
-            label1.Text = "Bookland (or logo)";
+            label1.Text = "Bookland";
             label1.Click += label1_Click;
             // 
             // user_label
@@ -65,7 +65,7 @@
             user_label.ForeColor = Color.FromArgb(73, 60, 52);
             user_label.Location = new Point(42, 102);
             user_label.Name = "user_label";
-            user_label.Size = new Size(79, 19);
+            user_label.Size = new Size(97, 24);
             user_label.TabIndex = 1;
             user_label.Text = "Username";
             // 
@@ -101,7 +101,7 @@
             label3.ForeColor = Color.FromArgb(73, 60, 52);
             label3.Location = new Point(42, 227);
             label3.Name = "label3";
-            label3.Size = new Size(77, 19);
+            label3.Size = new Size(93, 24);
             label3.TabIndex = 3;
             label3.Text = "Password";
             // 
@@ -124,7 +124,7 @@
             label4.ForeColor = Color.FromArgb(73, 60, 52);
             label4.Location = new Point(42, 293);
             label4.Name = "label4";
-            label4.Size = new Size(135, 19);
+            label4.Size = new Size(167, 24);
             label4.TabIndex = 5;
             label4.Text = "Confirm Password";
             // 
@@ -136,7 +136,7 @@
             checkBoxShowPass.ForeColor = Color.Tan;
             checkBoxShowPass.Location = new Point(44, 353);
             checkBoxShowPass.Name = "checkBoxShowPass";
-            checkBoxShowPass.Size = new Size(133, 23);
+            checkBoxShowPass.Size = new Size(160, 28);
             checkBoxShowPass.TabIndex = 7;
             checkBoxShowPass.Text = "Show password";
             checkBoxShowPass.UseVisualStyleBackColor = true;
@@ -176,9 +176,9 @@
             // 
             label5.AutoSize = true;
             label5.ForeColor = Color.DimGray;
-            label5.Location = new Point(80, 549);
+            label5.Location = new Point(53, 544);
             label5.Name = "label5";
-            label5.Size = new Size(180, 19);
+            label5.Size = new Size(222, 24);
             label5.TabIndex = 10;
             label5.Text = "Already Have An Account";
             // 
@@ -188,9 +188,9 @@
             label6.Cursor = Cursors.Hand;
             label6.Font = new Font("Candara", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.FromArgb(73, 60, 52);
-            label6.Location = new Point(107, 577);
+            label6.Location = new Point(83, 568);
             label6.Name = "label6";
-            label6.Size = new Size(126, 23);
+            label6.Size = new Size(152, 28);
             label6.TabIndex = 11;
             label6.Text = "Back to LOGIN";
             label6.Click += label6_Click;
@@ -213,7 +213,7 @@
             label7.ForeColor = Color.FromArgb(73, 60, 52);
             label7.Location = new Point(42, 165);
             label7.Name = "label7";
-            label7.Size = new Size(77, 19);
+            label7.Size = new Size(95, 24);
             label7.TabIndex = 12;
             label7.Text = "Full Name";
             label7.Click += label7_Click;
@@ -227,7 +227,7 @@
             authorCheckBox.ForeColor = Color.FromArgb(73, 60, 52);
             authorCheckBox.Location = new Point(44, 383);
             authorCheckBox.Name = "authorCheckBox";
-            authorCheckBox.Size = new Size(127, 23);
+            authorCheckBox.Size = new Size(157, 28);
             authorCheckBox.TabIndex = 14;
             authorCheckBox.Text = "I am an author!";
             authorCheckBox.UseVisualStyleBackColor = true;
@@ -250,7 +250,7 @@
             // 
             // FormRegister
             // 
-            AutoScaleDimensions = new SizeF(9F, 19F);
+            AutoScaleDimensions = new SizeF(10F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.PapayaWhip;
             ClientSize = new Size(341, 638);

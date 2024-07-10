@@ -30,6 +30,7 @@
         {
             profCover = new PictureBox();
             scroll_panel2 = new Panel();
+            statisticsPanel = new FlowLayoutPanel();
             statisticsContainer = new RichTextBox();
             label5 = new Label();
             pictureBox2 = new PictureBox();
@@ -77,6 +78,7 @@
             // scroll_panel2
             // 
             scroll_panel2.AutoScroll = true;
+            scroll_panel2.Controls.Add(statisticsPanel);
             scroll_panel2.Controls.Add(statisticsContainer);
             scroll_panel2.Controls.Add(label5);
             scroll_panel2.Controls.Add(pictureBox2);
@@ -92,6 +94,16 @@
             scroll_panel2.Name = "scroll_panel2";
             scroll_panel2.Size = new Size(1455, 763);
             scroll_panel2.TabIndex = 14;
+            // 
+            // statisticsPanel
+            // 
+            statisticsPanel.AutoScroll = true;
+            statisticsPanel.BackColor = Color.FromArgb(73, 60, 52);
+            statisticsPanel.FlowDirection = FlowDirection.TopDown;
+            statisticsPanel.Location = new Point(30, 723);
+            statisticsPanel.Name = "statisticsPanel";
+            statisticsPanel.Size = new Size(1378, 300);
+            statisticsPanel.TabIndex = 23;
             // 
             // statisticsContainer
             // 
@@ -172,9 +184,9 @@
             label4.ForeColor = Color.PapayaWhip;
             label4.Location = new Point(53, 365);
             label4.Name = "label4";
-            label4.Size = new Size(62, 28);
+            label4.Size = new Size(57, 28);
             label4.TabIndex = 19;
-            label4.Text = "Plot :";
+            label4.Text = "Plot:";
             // 
             // AddBookButton
             // 
@@ -262,9 +274,9 @@
             title_label.ForeColor = Color.PapayaWhip;
             title_label.Location = new Point(3, 18);
             title_label.Name = "title_label";
-            title_label.Size = new Size(65, 28);
+            title_label.Size = new Size(60, 28);
             title_label.TabIndex = 7;
-            title_label.Text = "Title :";
+            title_label.Text = "Title:";
             // 
             // title_textBox
             // 
@@ -285,9 +297,9 @@
             isbn_label.ForeColor = Color.PapayaWhip;
             isbn_label.Location = new Point(3, 82);
             isbn_label.Name = "isbn_label";
-            isbn_label.Size = new Size(70, 28);
+            isbn_label.Size = new Size(65, 28);
             isbn_label.TabIndex = 15;
-            isbn_label.Text = "ISBN :";
+            isbn_label.Text = "ISBN:";
             // 
             // isbn_textBox
             // 
@@ -306,11 +318,11 @@
             category_label.AutoSize = true;
             category_label.Font = new Font("Candara", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             category_label.ForeColor = Color.PapayaWhip;
-            category_label.Location = new Point(3, 133);
+            category_label.Location = new Point(3, 147);
             category_label.Name = "category_label";
-            category_label.Size = new Size(105, 56);
+            category_label.Size = new Size(106, 28);
             category_label.TabIndex = 9;
-            category_label.Text = "Category :";
+            category_label.Text = "Category:";
             // 
             // comboBox1
             // 
@@ -334,9 +346,9 @@
             price_label.ForeColor = Color.PapayaWhip;
             price_label.Location = new Point(369, 18);
             price_label.Name = "price_label";
-            price_label.Size = new Size(71, 28);
+            price_label.Size = new Size(66, 28);
             price_label.TabIndex = 13;
-            price_label.Text = "Price :";
+            price_label.Text = "Price:";
             // 
             // price_textBox
             // 
@@ -357,9 +369,9 @@
             cover_label.ForeColor = Color.PapayaWhip;
             cover_label.Location = new Point(369, 82);
             cover_label.Name = "cover_label";
-            cover_label.Size = new Size(80, 28);
+            cover_label.Size = new Size(75, 28);
             cover_label.TabIndex = 11;
-            cover_label.Text = "Cover :";
+            cover_label.Text = "Cover:";
             // 
             // cover_textBox
             // 
@@ -449,5 +461,6 @@
         private ComboBox comboBox1;
         private Label label5;
         private RichTextBox statisticsContainer;
+        private FlowLayoutPanel statisticsPanel;
     }
 }

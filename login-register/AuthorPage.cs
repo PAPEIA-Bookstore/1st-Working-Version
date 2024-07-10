@@ -32,7 +32,6 @@ namespace login_register
             //Book input fields
             fields = new List<Control>() { cover_textBox, isbn_textBox, price_textBox, title_textBox, plot_richTextBox, comboBox1 };
 
-
             books = new Hashtable();
 
             NpgsqlConnection connection = DBHandler.OpenConnection();
@@ -59,7 +58,28 @@ namespace login_register
                         if (books.ContainsKey(reader2.GetString(0)))
                         {
                             string title = books[reader2.GetString(0)].ToString();
-                            statisticsContainer.Text = statisticsContainer.Text + title + "\nRating: " + reader2.GetFloat(1).ToString("0.00") + " Sales: " + reader2.GetInt32(2).ToString() + "\n\n";
+
+                            RichTextBox richTextBox = new RichTextBox();
+                            richTextBox.BackColor = Color.FromArgb(73, 60, 52);
+                            richTextBox.BorderStyle = BorderStyle.None;
+                            richTextBox.Font = new Font("Candara", 16.2782612F, FontStyle.Regular, GraphicsUnit.Point, 161);
+                            richTextBox.ForeColor = Color.PapayaWhip;
+                            richTextBox.Size = new Size(300, 100);
+                            richTextBox.ScrollBars = RichTextBoxScrollBars.None;
+                            
+                            int length = statisticsContainer.Text.Length;
+                            int titleLength = title.Length;
+                            richTextBox.Text = statisticsContainer.Text + title + "\nRating: " + reader2.GetFloat(1).ToString("0.0") + "\nSales: " + reader2.GetInt32(2).ToString() + "\n";
+                            richTextBox.Select(length, titleLength);
+                            richTextBox.SelectionFont = new Font(statisticsContainer.Font, FontStyle.Bold);
+
+                            statisticsPanel.Controls.Add(richTextBox);
+
+                            //length = statisticsContainer.Text.Length;
+                            
+                            //statisticsContainer.Text = statisticsContainer.Text + title + "\nRating: " + reader2.GetFloat(1).ToString("0.0") + "\nSales: " + reader2.GetInt32(2).ToString() + "\n\n";
+                            //statisticsContainer.Select(length, titleLength);
+                            //statisticsContainer.SelectionFont = new Font(statisticsContainer.Font, FontStyle.Bold);
                         }
                     }
 
@@ -75,12 +95,7 @@ namespace login_register
             //reader.Close();
             DBHandler.CloseConnection(connection, command);
 
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
+            //FillSalesChart();
         }
 
         private void AddBookButton_Click(object sender, EventArgs e)
